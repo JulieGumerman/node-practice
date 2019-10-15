@@ -46,8 +46,7 @@ const removeNote = (title) => {
     let updatedNotes = notes.filter(note => {
         return note.title !== title;
     })
-    let notesJSON = JSON.stringify(updatedNotes);
-    fs.writeFileSync("notes.json", notesJSON)
+    saveNotes(updatedNotes);
 }
 
 module.exports = {
